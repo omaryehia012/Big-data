@@ -9,7 +9,6 @@
 ![image](https://user-images.githubusercontent.com/93586279/194717027-f19eefe6-a4d4-4803-9ee8-24bc230824b5.png)
 
 ### My Results
-	1
 - ABOUT	1
 - BY	1
 - DO	2
