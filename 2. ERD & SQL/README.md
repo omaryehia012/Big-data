@@ -8,3 +8,5 @@
 
 ### Q.2
 #### 2-Find the names of the 10 employees who sold the highest quantity of sales, in “Beverages” Category, and order them in descending order showing the highest first.
+![image](https://user-images.githubusercontent.com/93586279/194756129-5e8b88d9-eee7-4a8d-b7ce-efc99c2477a7.png)
+![image](https://user-images.githubusercontent.com/93586279/194756152-eba6c4e1-055c-4515-8a51-4d19ed2fe3c1.png)
