@@ -1,0 +1,22 @@
+1-Find the names of the top 10 employees who sold the most number of orders, and order them in descending order showing the highest first.
+
+SELECT E.FirstName AS Employee_FirstName, E.lastname AS Employee_LastName, count(O.orderID) AS Number_of_orders 
+FROM Orders O 
+INNER JOIN Employees E on O.EmployeeID= E.EmployeeID 
+GROUP BY E.EmployeeID 
+ORDER BY Number_of_orders desc
+LIMIT 10;
+
+ 
+2-Find the names of the 10 employees who sold the highest quantity of sales, in “Beverages” Category, and order them in descending order showing the highest first.
+
+SELECT Employee_FirstName , Employee_LastName , SUM(Quantity) Total_Quantity FROM
+(SELECT E.FirstName AS Employee_FirstName , E.lastname AS Employee_LastName, O.orderID , D.Quantity 
+FROM Orders O 
+INNER JOIN employees E ON O.employeeID= E.employeeID 
+INNER JOIN orderdetails D ON O.orderID= D.orderID 
+INNER JOIN products P on P.productID= D.ProductID 
+INNER JOIN categories C on C.categoryID= P.categoryID
+WHERE C.CategoryName= 'Beverages')
+GROUP BY Employee_FirstName, Employee_LastName
+ORDER BY Total_quantity desc;
