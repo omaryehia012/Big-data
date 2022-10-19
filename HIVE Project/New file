@@ -1,0 +1,26 @@
+
+$ hadoop fs -copyFromLocal  /home/cloudera/hive/Bev_BranchA.txt  /user/hive/hiveproject/
+$ hadoop fs -copyFromLocal  /home/cloudera/hive/Bev_BranchB.txt  /user/hive/hiveproject/
+$ hadoop fs -copyFromLocal  /home/cloudera/hive/Bev_BranchC.txt  /user/hive/hiveproject/
+$ hadoop fs -copyFromLocal  /home/cloudera/hive/Bev_ConscountA.txt  /user/hive/hiveproject/
+$ hadoop fs -copyFromLocal  /home/cloudera/hive/Bev_ConscountB.txt  /user/hive/hiveproject/
+$ hadoop fs -copyFromLocal  /home/cloudera/hive/Bev_ConscountC.txt /user/hive/hiveproject/
+
+Hive> create database if not exits hadoophiveproject with dbproperties('creator'="Omar",'date'="19/10/2022")
+
+Hive> use hadoophiveproject;
+Hive> create table if not exists BevcountA (beverage string,count int) row format delimited fields terminated by ",";
+Hive> create table if not exists BevcountB (beverage string,count int) row format delimited fields terminated by ",";
+Hive> create table if not exists BevcountC (beverage string,count int) row format delimited fields terminated by ",";
+
+Hive> load data inpath "/user/hive/hiveproject/Bev_ConscountA.txt" into table BevcountA;
+Hive> load data inpath "/user/hive/hiveproject/Bev_ConscountB.txt" into table BevcountB;
+Hive> load data inpath "/user/hive/hiveproject/Bev_ConscountC.txt" into table BevcountC;
+
+Hive> create table if not exists BevbranchA(beverage string,branch string) row format delimited fields terminated by ","
+Hive> create table if not exists BevbranchB(beverage string, branch string) row format delimited fields terminated by ","
+Hive> create table if not exists BevbranchC(beverage string, branch string) row format delimited fields terminated by ","
+
+hive> load data inpath "/user/hive/projinput/Bev_BranchA.txt" into table BevbranchA
+hive> load data inpath "/user/hive/projinput/Bev_BranchB.txt" into table BevbranchB
+hive> load data inpath "/user/hive/projinput/Bev_BranchC.txt" into table BevbranchC
