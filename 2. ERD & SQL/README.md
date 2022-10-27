@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/93586279/194755207-61b1ee9d-758d-44da-b112-ca4cb71f5192.png)
 
 ## Video 
-![](https://www.veed.io/view/8236c33e-e196-4092-95b7-4a88a6d0c9bc)
+https://www.veed.io/view/8236c33e-e196-4092-95b7-4a88a6d0c9bc
 
 ### Q.1
 #### 1-Find the names of the top 10 employees who sold the most number of orders, and order them in descending order showing the highest first.
