@@ -1,0 +1,32 @@
+<!--******************************************-->
+<!--workflow.xml                              -->
+<!--******************************************-->
+<workflow-app name="My_Workflow" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-9afa"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-9afa">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>Load_COVID_TO_HDFS.sh</exec>
+            <file>/user/hdfs/Load_COVID_TO_HDFS.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="hive2-d4ca"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-d4ca">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>hive.hql</script>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>
+
