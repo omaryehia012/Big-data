@@ -11,4 +11,5 @@ This is a final group project presented to Sprints. in this project we have impl
 
 ## Data
 The data was given by the instructors discussing the COVID-19 situation
-![image](https://user-images.githubusercontent.com/93586279/205484953-bf00c60f-d17c-4d37-abef-6edd70f85c86.png)
+
+![image](https://user-images.githubusercontent.com/93586279/205484978-cb2b4809-b009-4279-abb8-ec32dbda455a.png)
